@@ -10,26 +10,68 @@ interface TimelineItem {
   location: string;
   period: string;
   description: string;
+  highlights: string[];
   type: 'work' | 'project';
 }
 
 const timelineData: TimelineItem[] = [
   {
     id: 1,
-    title: "Associate Software Engineer",
+    title: "Customer Email Automation using Agentic AI",
     company: "A.P Moller Maersk",
     location: "Bangalore, India",
-    period: "2024 - Present",
-    description: "As an Associate Software Engineer at A.P. Moller Maersk, I contributed to building and enhancing RESTful APIs with Spring Boot (Java) and developed robust integrations using Apache Camel, including a custom email connector. I implemented backend APIs for a semantic indexing doc agent, enabling intelligent question-answering on product documentation via both UI and GitHub Discussions. To ensure performance and accuracy, I designed automated evaluation pipelines. I also completed the LLM Lab under Dmitry Buykin, which deepened my understanding of advanced AI applications, and supported hands-on learning as a Teaching Assistant for the Applied AI Crash Course (Cohort 2).",
-    type: "work"
+    period: "Feb 2026 - Present",
+    description: "Building an AI-driven customer-support automation platform for high-volume global logistics workflows.",
+    highlights: [
+      "Implemented SOP-driven agent workflows across about 30 country-specific process variations.",
+      "Orchestrated 30+ internal tools and APIs spanning multiple enterprise products.",
+      "Improved reliability by addressing context bloat, looping, invalid tool arguments, non-deterministic execution, and downstream failures.",
+      "Introduced composite tools and structured workflows to reduce agent steps and constrain execution paths."
+    ],
+    type: "project"
   },
   {
     id: 2,
-    title: "Intern",
+    title: "Multi-Product AI Documentation Assistant",
     company: "A.P Moller Maersk",
     location: "Bangalore, India",
-    period: "2023 - 2024",
-    description: "During my internship at A.P. Moller Maersk, I developed conversational AI prototypes using Rasa and LangChain, and contributed to the setup of CI/CD pipelines through GitHub Actions. My responsibilities included adding new features to existing APIs with Spring Boot (Java) and writing comprehensive JUnit tests to ensure code quality and reliability. I built operational dashboards using Grafana and Prometheus to enable real-time monitoring and visualization. Furthermore, I implemented a broker health monitoring solution by scripting publish subscribe message flows across ActiveMQ Artemis brokers, exporting key metrics to Prometheus via Telegraf, and visualizing the system's health on a Grafana dashboard.",
+    period: "Jul 2025 - Jan 2026",
+    description: "Independently built an end-to-end AI knowledge assistant supporting users across 15+ internal products.",
+    highlights: [
+      "Designed semantic-tag-based classification and retrieval for product documentation.",
+      "Owned backend APIs, database operations, retrieval, testing, evaluation, Dockerization, and CI/CD.",
+      "Created a reviewed golden dataset and evaluated faithfulness, helpfulness, recall, F1, and accuracy.",
+      "Built a packaged Python CLI with pyproject.toml and uv and deployed through an existing Kubernetes platform."
+    ],
+    type: "project"
+  },
+  {
+    id: 3,
+    title: "Associate Software Engineer - Backend & Platform",
+    company: "A.P. Moller-Maersk",
+    location: "Bangalore, India",
+    period: "Jul 2024 - Jun 2025",
+    description: "Developed and operated enterprise backend and integration services across cloud-native environments.",
+    highlights: [
+      "Built REST APIs with Python, FastAPI, Java, and Spring Boot and Apache Camel email/ActiveMQ routes.",
+      "Worked across PostgreSQL, Keycloak, Vault, GitHub Actions, Helm, Docker, Kubernetes, Azure, and GCP.",
+      "Reduced a Docker image from about 1.2 GB to 360 MB - an approximately 70% reduction.",
+      "Supported production observability and debugging with Grafana and Prometheus."
+    ],
+    type: "work"
+  },
+  {
+    id: 4,
+    title: "Software Engineering Intern",
+    company: "A.P. Moller-Maersk",
+    location: "Bangalore, India",
+    period: "Jul 2023 - Jun 2024",
+    description: "Built an enterprise software foundation across backend, platform, and early conversational AI work.",
+    highlights: [
+      "Proactively built a LangChain-based RAG assistant over internal team documentation.",
+      "Created a Rasa conversational prototype that invoked internal APIs to provision platform resources.",
+      "Contributed across APIs, messaging, authentication, containers, Kubernetes, secrets, monitoring, and deployment."
+    ],
     type: "work"
   },
 ];
@@ -99,7 +141,12 @@ const Timeline: React.FC = () => {
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">{item.description}</p>
+                  <ul className="space-y-2 text-sm text-gray-700 list-disc pl-5">
+                    {item.highlights.map((highlight) => (
+                      <li key={highlight} className="leading-relaxed">{highlight}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </motion.div>

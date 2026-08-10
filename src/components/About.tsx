@@ -29,23 +29,30 @@ const About: React.FC = () => {
         >
           <div className="space-y-6">
             <p className="text-lg leading-relaxed text-gray-700">
-              I'm an Associate Software Engineer at Maersk 🚢, 
-              where I primarily work with Java Spring Boot , Apache Camel , and Python.
-
-              My journey into engineering was sparked by a deep passion for AI especially its applications in medicine. 
-              I'm driven by curiosity, a love for learning.
-              I believe strongly in using AI for good and continually strive to contribute towards that vision.
+              I'm an Associate Software Engineer and AI Systems Engineer at A.P. Moller-Maersk,
+              where I build production AI and backend systems. My work has
+              evolved from APIs, messaging, and platform engineering into agentic workflows that
+              support customer-service operations handling roughly 18,000-20,000 cases each day.
             </p>
             
             <p className="text-lg leading-relaxed text-gray-700">
-              At Maersk, I've discovered a genuine enthusiasm for exploring new tools and technologies. 
-              I'm fascinated by the architectures that underpin everything from neural networks like RNNs, LSTMs, and 
-              Transformers to robust integration frameworks like Apache Camel.
+              I independently built an AI documentation assistant used across 15+ internal products,
+              taking it from semantic retrieval and backend APIs through Docker, Kubernetes, CI/CD,
+              and evaluation. Today, I orchestrate 30+ enterprise tools and APIs in SOP-driven agent
+              workflows spanning about 30 country-specific process variations.
             </p>
 
             <p className="text-lg leading-relaxed text-gray-700">
-              When I'm not coding, you'll find me with a paintbrush in hand, exploring color and form 
-              on canvas. This artistic practice deeply influences my approach to design and user experience.
+              I'm especially interested in the engineering that makes LLM systems dependable:
+              retrieval quality, evaluation, context control, structured execution, tool reliability,
+              and production debugging. I enjoy turning promising prototypes into systems that behave
+              predictably around real enterprise processes.
+            </p>
+
+            <p className="text-lg leading-relaxed text-gray-700">
+              Outside engineering, you'll often find me painting and exploring color and form on
+              canvas. That creative practice shapes how I approach problem-solving: with curiosity,
+              patience, and attention to the experience behind the system.
             </p>
           </div>
 
