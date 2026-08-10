@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code, Bot, Database, Globe } from 'lucide-react';
+import { Code, Bot, Database, Cloud } from 'lucide-react';
 
 interface Skill {
   category: string;
@@ -11,24 +11,24 @@ interface Skill {
 
 const skillsData: Skill[] = [
   {
-    category: "Frontend",
-    icon: <Globe size={24} />,
-    skills: ["Streamlit"]
+    category: "AI / LLM Systems",
+    icon: <Bot size={24} />,
+    skills: ["Agentic Workflows", "Tool Orchestration", "RAG & Semantic Retrieval", "Prompt & Context Engineering", "LLM Evaluation"]
   },
   {
     category: "Backend",
     icon: <Database size={24} />,
-    skills: ["Python", "PostgreSQL", "FastAPI", "Apache Camel", "SpringBoot"]
+    skills: ["Python & FastAPI", "Java & Spring Boot", "REST APIs", "PostgreSQL", "Apache Camel & ActiveMQ"]
   },
   {
-    category: "Tools & Technologies",
+    category: "Cloud & Infrastructure",
+    icon: <Cloud size={24} />,
+    skills: ["Docker & Kubernetes", "GitHub Actions", "Terraform", "Azure & GCP", "BigQuery & GCS"]
+  },
+  {
+    category: "Operations & Tooling",
     icon: <Code size={24} />,
-    skills: ["Git", "Docker", "GithubActions", "Kubernetes"]
-  },
-  {
-    category: "AI",
-    icon: <Bot size={24} />,
-    skills: ["RAG", "Evals", "PromptEngineering", "ContextEngineering", "Agentic AI"]
+    skills: ["Grafana & Prometheus", "CI/CD", "Production Debugging", "Vault & Keycloak", "Git, pyproject.toml & uv"]
   },
 ];
 

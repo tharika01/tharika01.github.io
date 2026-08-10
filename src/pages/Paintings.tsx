@@ -9,6 +9,7 @@ interface Painting {
   medium: string;
   description: string;
   imageUrl: string;
+  fit?: 'cover' | 'contain';
 }
 
 const paintings: Painting[] = [
@@ -53,6 +54,21 @@ const paintings: Painting[] = [
     medium: "Acrylic on Canvas",
     description: "A cosmic dance between day and night, exploring the eternal balance of opposing forces through symbolic imagery and harmonious color relationships.",
     imageUrl: "paintings/abstract art.jpeg"
+  },
+  {
+    id: 7,
+    title: "Crimson Ganesha",
+    medium: "Acrylic on Canvas",
+    description: "A close, contemporary interpretation of Lord Ganesha in glowing crimson and amber tones. Delicate gold mandala motifs frame the composition, balancing bold, flowing forms with a sense of warmth, abundance, and auspicious beginnings.",
+    imageUrl: "paintings/crimson-ganesha-framed.png",
+    fit: "contain"
+  },
+  {
+    id: 8,
+    title: "Golden Venkateshwara",
+    medium: "Mixed Media on Circular Canvas",
+    description: "A reverent portrait of Lord Venkateshwara rendered in gold against a deep black ground. The circular form, mirrored accents, and lotus-inspired ornamentation create a radiant, meditative presence rooted in devotion and sacred geometry.",
+    imageUrl: "paintings/golden-venkateshwara-framed.png"
   }
 ];
 
@@ -104,11 +120,15 @@ const Paintings: React.FC = () => {
                 onClick={() => setSelectedPainting(painting)}
               >
                 <div className="relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-500 transform hover:scale-105">
-                  <div className="aspect-square overflow-hidden">
+                  <div className="aspect-square overflow-hidden bg-black/20">
                     <img
                       src={painting.imageUrl}
                       alt={painting.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className={`w-full h-full transition-transform duration-700 ${
+                        painting.fit === 'contain'
+                          ? 'object-contain p-2 group-hover:scale-105'
+                          : 'object-cover group-hover:scale-110'
+                      }`}
                     />
                   </div>
                   
@@ -153,11 +173,13 @@ const Paintings: React.FC = () => {
                   <X size={20} />
                 </button>
                 
-                <div className="aspect-video overflow-hidden rounded-t-xl">
+                <div className="aspect-video overflow-hidden rounded-t-xl bg-gray-100">
                   <img
                     src={selectedPainting.imageUrl}
                     alt={selectedPainting.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${
+                      selectedPainting.fit === 'contain' ? 'object-contain p-4' : 'object-cover'
+                    }`}
                   />
                 </div>
                 

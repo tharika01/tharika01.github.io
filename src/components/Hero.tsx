@@ -23,8 +23,17 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-light mb-6 tracking-wide"
         >
-          Hello, I'm Tharika
+          Hello, I'm Tharika Vikas Srinivasa
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-xl md:text-2xl font-light mb-8 text-white/90"
+        >
+          AI Systems Engineer building reliable agentic and backend systems
+        </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +41,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="inline-flex items-center space-x-2 text-sm tracking-widest uppercase"
         >
-          <span>See what I'm working on Below ↓</span>
+          <span>See what I'm working on below</span>
           <ChevronDown className="animate-bounce" size={20} />
         </motion.div>
       </div>
