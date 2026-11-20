@@ -13,7 +13,7 @@ const skillsData: Skill[] = [
   {
     category: "AI / LLM Systems",
     icon: <Bot size={24} />,
-    skills: ["Agentic Workflows", "Tool Orchestration", "RAG & Semantic Retrieval", "Prompt & Context Engineering", "LLM Evaluation"]
+    skills: ["Agentic Workflows", "Tool Design & Orchestration", "RAG, Reranking & Retrieval", "LangChain & Context Engineering", "LLM Evaluation"]
   },
   {
     category: "Backend",
@@ -39,37 +39,37 @@ const Skills: React.FC = () => {
   });
 
   return (
-    <section ref={ref} className="py-20 bg-white">
+    <section ref={ref} className="py-24 md:py-32 bg-ink">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-black mb-8">Skills & Expertise</h2>
-          <div className="w-24 h-0.5 bg-black mx-auto mb-8"></div>
+          <p className="text-accent text-xs font-medium tracking-[0.3em] uppercase mb-4">Toolkit</p>
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-white">Skills &amp; Expertise</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillsData.map((skillGroup, index) => (
             <motion.div
               key={skillGroup.category}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+              transition={{ duration: 0.7, delay: index * 0.1 }}
+              className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl hover:border-accent/40 hover:bg-white/[0.05] transition-all duration-300"
             >
-              <div className="flex items-center mb-4">
-                <div className="text-black mr-3">
+              <div className="flex items-center mb-5">
+                <div className="text-accent mr-3">
                   {skillGroup.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-black">{skillGroup.category}</h3>
+                <h3 className="text-base font-semibold text-white">{skillGroup.category}</h3>
               </div>
-              
-              <ul className="space-y-2">
+
+              <ul className="space-y-2.5">
                 {skillGroup.skills.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="text-gray-700 text-sm">
+                  <li key={skillIndex} className="text-neutral-400 text-sm">
                     {skill}
                   </li>
                 ))}
