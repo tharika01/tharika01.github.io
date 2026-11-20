@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Timeline from '../components/Timeline';
 import Skills from '../components/Skills';
+import Contact from '../components/Contact';
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       <About />
       <Timeline />
       <Skills />
+      <Contact />
     </div>
   );
 };
