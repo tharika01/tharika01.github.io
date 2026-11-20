@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
   });
 
   return (
-    <section ref={ref} id="contact" className="py-24 md:py-32 bg-ink-900 border-t border-white/10">
+    <section ref={ref} id="contact" className="relative py-24 md:py-32 border-t border-white/10 bg-ink-900/45">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
           </div>
 
           <p className="mt-16 text-sm text-neutral-600">
-            © {new Date().getFullYear()} Tharika Vikas Srinivasa · Software Engineer · AI Systems
+            © {new Date().getFullYear()} Tharika Vikas Srinivasa · Software Engineer · Applied AI
           </p>
         </motion.div>
       </div>

@@ -1,25 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, FileDown } from 'lucide-react';
-import Starfield from './Starfield';
+
+const scrollToWork = () => {
+  document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+};
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ink">
-      {/* Twinkling starfield */}
-      <Starfield />
-      {/* Soft blue glows on the slate base */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(70% 55% at 50% -5%, rgba(91,157,255,0.20), transparent 70%), radial-gradient(45% 45% at 85% 100%, rgba(74,134,224,0.14), transparent 70%), radial-gradient(40% 40% at 10% 90%, rgba(91,157,255,0.08), transparent 70%)',
-        }}
-      />
-      {/* Fade to solid ink at the bottom for a seamless transition */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="hero-nebula" aria-hidden="true" />
 
-      {/* Content */}
       <div className="relative z-10 px-6 max-w-5xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +18,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-accent text-xs md:text-sm font-medium tracking-[0.3em] uppercase mb-6"
         >
-          Software Engineer · AI Systems
+          Software Engineer · Applied AI
         </motion.p>
 
         <motion.h1
@@ -55,12 +46,13 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.9, delay: 0.4 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <a
-            href="#work"
+          <button
+            type="button"
+            onClick={scrollToWork}
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-accent text-ink text-sm font-semibold hover:bg-accent-soft transition-colors"
           >
             View my work
-          </a>
+          </button>
           <a
             href="Tharika_Vikas_Srinivasa_Resume.pdf"
             download
@@ -72,7 +64,6 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

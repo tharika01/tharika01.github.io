@@ -9,7 +9,7 @@ const About: React.FC = () => {
   });
 
   return (
-    <section ref={ref} id="about" className="py-24 md:py-32 bg-ink scroll-mt-20">
+    <section ref={ref} id="about" className="relative py-24 md:py-32 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

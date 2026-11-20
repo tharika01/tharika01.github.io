@@ -52,7 +52,7 @@ const timelineData: TimelineItem[] = [
   {
     id: 3,
     role: "Software Engineer",
-    project: "Backend & Platform Engineering",
+    project: "Backend, platform engineering",
     company: "A.P. Moller-Maersk",
     location: "Bangalore, India",
     period: "Jul 2024 - Jun 2025",
@@ -87,7 +87,7 @@ const Timeline: React.FC = () => {
   });
 
   return (
-    <section ref={ref} id="work" className="py-24 md:py-32 bg-ink-900 scroll-mt-20">
+    <section ref={ref} id="work" className="relative py-24 md:py-32 scroll-mt-20 bg-ink-900/45">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
