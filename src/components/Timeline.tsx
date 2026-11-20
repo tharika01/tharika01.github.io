@@ -5,19 +5,21 @@ import { Calendar, MapPin } from 'lucide-react';
 
 interface TimelineItem {
   id: number;
-  title: string;
+  role: string;
+  project?: string;
   company: string;
   location: string;
   period: string;
   description: string;
   highlights: string[];
-  type: 'work' | 'project';
+  type: 'role' | 'project';
 }
 
 const timelineData: TimelineItem[] = [
   {
     id: 1,
-    title: "Customer Email Automation with Agentic AI",
+    role: "Software Engineer",
+    project: "Customer Email Automation with Agentic AI",
     company: "A.P. Moller-Maersk",
     location: "Bangalore, India",
     period: "Feb 2026 - Present",
@@ -33,7 +35,8 @@ const timelineData: TimelineItem[] = [
   },
   {
     id: 2,
-    title: "Multi-Product AI Documentation Assistant",
+    role: "Software Engineer",
+    project: "Multi-Product AI Documentation Assistant",
     company: "A.P. Moller-Maersk",
     location: "Bangalore, India",
     period: "Jul 2025 - Jan 2026",
@@ -47,8 +50,9 @@ const timelineData: TimelineItem[] = [
     type: "project"
   },
   {
-    id: 4,
-    title: "Backend & Platform Engineering",
+    id: 3,
+    role: "Software Engineer",
+    project: "Backend & Platform Engineering",
     company: "A.P. Moller-Maersk",
     location: "Bangalore, India",
     period: "Jul 2024 - Jun 2025",
@@ -59,11 +63,11 @@ const timelineData: TimelineItem[] = [
       "Worked across PostgreSQL, Keycloak, Vault, GitHub Actions, Docker, Kubernetes, GCP, and Azure.",
       "Supported production observability and debugging with Grafana and Prometheus."
     ],
-    type: "work"
+    type: "project"
   },
   {
-    id: 5,
-    title: "Software Engineering Intern",
+    id: 4,
+    role: "Software Engineering Intern",
     company: "A.P. Moller-Maersk",
     location: "Bangalore, India",
     period: "Jul 2023 - Jun 2024",
@@ -72,7 +76,7 @@ const timelineData: TimelineItem[] = [
       "Proactively built a LangChain-based RAG assistant over internal team documentation.",
       "Created a Rasa conversational prototype that invoked internal APIs to provision platform resources."
     ],
-    type: "work"
+    type: "role"
   },
 ];
 
@@ -92,7 +96,7 @@ const Timeline: React.FC = () => {
           className="mb-20"
         >
           <p className="text-accent text-xs font-medium tracking-[0.3em] uppercase mb-4">Experience</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-white">Work &amp; Projects</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-white">Work</h2>
         </motion.div>
 
         <div className="relative">
@@ -119,16 +123,26 @@ const Timeline: React.FC = () => {
                 <div className="bg-white/[0.03] border border-white/10 p-7 rounded-2xl hover:border-accent/40 hover:bg-white/[0.05] transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <span className={`inline-block px-3 py-1 text-[11px] font-medium tracking-wide rounded-full ${
-                      item.type === 'work'
+                      item.type === 'role'
                         ? 'bg-accent/15 text-accent border border-accent/30'
                         : 'bg-white/10 text-neutral-300 border border-white/10'
                     }`}>
-                      {item.type === 'work' ? 'Role' : 'Project'}
+                      {item.type === 'role' ? 'Role' : 'Project'}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl md:text-2xl font-medium text-white mb-1.5">{item.title}</h3>
-                  <p className="text-neutral-300 font-medium mb-3">{item.company}</p>
+                  {item.project ? (
+                    <>
+                      <p className="text-accent text-sm font-medium mb-1">{item.role}</p>
+                      <h3 className="font-serif text-xl md:text-2xl font-medium text-white mb-1.5">{item.project}</h3>
+                      <p className="text-neutral-400 font-medium mb-3">{item.company}</p>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="font-serif text-xl md:text-2xl font-medium text-white mb-1.5">{item.role}</h3>
+                      <p className="text-neutral-400 font-medium mb-3">{item.company}</p>
+                    </>
+                  )}
 
                   <div className="flex flex-wrap items-center text-xs text-neutral-500 mb-5 gap-x-4 gap-y-1">
                     <div className="flex items-center">

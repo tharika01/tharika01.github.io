@@ -47,8 +47,7 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-accent text-xs font-medium tracking-[0.3em] uppercase mb-4">Toolkit</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-white">Skills &amp; Expertise</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-white">Skills</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
