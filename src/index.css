@@ -25,7 +25,6 @@
     animation-name: twinkle;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    will-change: opacity, transform;
   }
 }
 
@@ -58,6 +57,10 @@
     radial-gradient(ellipse 55% 50% at 88% 22%, rgba(120, 90, 255, 0.22), transparent 60%),
     radial-gradient(ellipse 45% 40% at 78% 78%, rgba(40, 140, 255, 0.16), transparent 65%),
     radial-gradient(ellipse 40% 35% at 18% 85%, rgba(70, 100, 220, 0.14), transparent 65%);
+  /* Rasterize once on its own layer so scrolling composites instead of re-painting the blur */
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout paint;
 }
 
 .hero-nebula::before,
@@ -65,12 +68,12 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(72px);
+  filter: blur(56px);
 }
 
 .hero-nebula::before {
   width: min(72vw, 820px);
-  height: min(52vh, 520px);
+  height: 520px;
   left: 50%;
   top: 8%;
   transform: translateX(-50%);
@@ -84,7 +87,7 @@
 
 .hero-nebula::after {
   width: min(48vw, 560px);
-  height: min(38vh, 380px);
+  height: 380px;
   right: -6%;
   top: 28%;
   background: radial-gradient(

@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="relative min-h-screen bg-ink text-neutral-300">
-        <Starfield count={200} />
+        <Starfield count={110} />
         <div className="relative z-10">
           <Navigation />
           <Routes>
