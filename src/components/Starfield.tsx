@@ -45,15 +45,16 @@ const Starfield: React.FC<StarfieldProps> = ({ count = 120 }) => {
       blue: Math.random() < 0.22,
     }));
 
+    // Stars are tiny dots, so retina scaling is wasted detail. Drawing at 1x
+    // keeps the per-frame fill rate low (a big win on high-DPI / mobile screens).
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
       height = window.innerHeight;
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
+      canvas.width = width;
+      canvas.height = height;
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
     };
 
     const draw = (t: number) => {
@@ -72,9 +73,13 @@ const Starfield: React.FC<StarfieldProps> = ({ count = 120 }) => {
     };
 
     let raf = 0;
+    let last = 0;
+    const frameInterval = 1000 / 30; // a slow twinkle only needs ~30fps
     const loop = (t: number) => {
-      draw(t);
       raf = requestAnimationFrame(loop);
+      if (t - last < frameInterval) return;
+      last = t;
+      draw(t);
     };
 
     resize();
