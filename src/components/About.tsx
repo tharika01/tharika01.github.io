@@ -19,7 +19,7 @@ const About: React.FC = () => {
         >
           <p className="text-accent text-xs font-medium tracking-[0.3em] uppercase mb-4">About</p>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-white">
-            Engineering AI that people can rely on
+            A little about me
           </h2>
         </motion.div>
 
@@ -30,33 +30,31 @@ const About: React.FC = () => {
           className="space-y-6"
         >
           <p className="text-lg leading-relaxed text-neutral-300">
-            I'm a Software Engineer at A.P. Moller-Maersk, where I build production AI and backend
-            systems. My work has evolved from APIs, messaging, and platform engineering into agentic
-            workflows that help resolve <span className="text-white">18,000–20,000 customer cases</span> each
-            day across 30+ countries.
+            I'm a software engineer based in Bengaluru who enjoys turning messy, real-world problems
+            into <span className="text-white">systems people can genuinely rely on</span>. I started out
+            in backend and platform engineering, and over time found myself drawn deeper into AI,
+            building software that retrieves, reasons, and makes decisions.
           </p>
 
           <p className="text-lg leading-relaxed text-neutral-300">
-            I led engineering of an AI documentation assistant used across <span className="text-white">25+
-            internal products</span>, owning retrieval, backend APIs, Docker, CI/CD, and a full
-            evaluation pipeline. Today I focus on making large LLM agent systems dependable: raising
-            accuracy, cutting tool errors, and constraining execution so agents behave predictably
-            around real enterprise processes.
+            What fascinates me most is the engineering that makes intelligent systems trustworthy. I'm
+            endlessly curious about how large language models can be made dependable: how thoughtful
+            retrieval, evaluation, and design turn a promising demo into something that behaves
+            predictably in the real world. I care as much about understanding <span className="text-white">why
+            a system fails</span> as about building it.
           </p>
 
           <p className="text-lg leading-relaxed text-neutral-300">
-            I'm especially interested in the engineering behind reliable LLM systems — retrieval
-            quality, evaluation, context control, structured execution, tool reliability, and
-            production debugging. I care as much about understanding <span className="text-white">why a
-            system fails</span> as about building it, and I often work closely with domain experts to
-            capture knowledge that was never written down.
+            I pick up new technologies and unfamiliar codebases quickly, and I like working closely with
+            the people a system is actually for, asking questions and capturing the knowledge that never
+            made it into the docs. To me, good software is as much about <span className="text-white">curiosity,
+            empathy, and clarity</span> as it is about code.
           </p>
 
           <p className="text-lg leading-relaxed text-neutral-300">
-            This work has been recognized with Maersk's <span className="text-white">Star Award</span> and
-            two <span className="text-white">Spot Awards</span>. I love learning, and I ramp up quickly on
-            new technologies and unfamiliar codebases — motivated by AI that makes a real difference to
-            the people who use it.
+            Outside of my day-to-day work, I like following where AI is heading, from agents and
+            evaluation to developer tooling, and experimenting with new ideas. Ultimately, I'm motivated
+            by technology that makes a real difference to the people who use it.
           </p>
         </motion.div>
       </div>
